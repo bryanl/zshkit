@@ -1,0 +1,24 @@
+# Description: Print the content of a http url, useful to download files with only zsh
+# Depends: zsh/scripts/http/get,zsh/scripts/http/urlencode
+# Author: asyd
+# Version: 20090323191053
+# exemple usage: wcat http://example.com/foo/
+# vim: set syntax=zsh:
+#
+autoload -U http/get
+local tcp_lines found hostport
+if [[ $# -ne 1 ]] {
+    print "usage: http/cat url"
+    return 1
+}
+hostport=${${1#http://}%%/*}
+http/get -h ${hostport%:*} -p ${${${(M)hostport%:*}:-:80}#:} -r /${${1#http://}#*/} 
+http_return_code=${${(s: :)tcp_lines[1]}[3]}
+tcp_lines=(${tcp_lines#*] })
+http_result=()
+found=0
+for line ($tcp_lines) {
+    [[ found -eq 1 ]] && http_result+="$line"
+    [[ $line = "" ]] && found=1
+}
+return 0

@@ -1,0 +1,15 @@
+zen;zsh/scripts/core/setversionnow,20090422132407;Change the version of the script to the current date
+zen;zsh/scripts/http/cat,20090323191053;Print the content of a http url, useful to download files with only zsh
+zen;zsh/scripts/http/get,20090421184011;Perform a http GET 
+zen;zsh/scripts/http/post,20090421184015;Perform an http POST 
+zen;zsh/scripts/http/urlencode,20090323191053;function to transform a string respecting the RFC 1738
+zen;zsh/scripts/mail/send,20090325154823;Send a mail directly to a SMTP server
+zen;zsh/scripts/zen,20090423140844;main function
+zen;zsh/scripts/zenlint,20090422132401;zenlint is a checker to ensure zen scripts respects zen guide lines
+zen;zsh/scripts/zgoogleit,20090423140849;small and stupid script for lmgtfy
+zen;zsh/scripts/zpaste,20090423140855;zpaste is a fonction to paste data to rafb.net others servers are coming
+zen;zsh/scripts/zurl,20090423140858;Send an URL to urlalacon (a tinyurl clone)
+zen;zsh/zle/dirname-current-arg,20090323191053;replace current argument by its parent directory
+zen;zsh/zle/insert-root-prefix,20090323191053;Insert sudo or pfexec in the beginning of the line
+zen;zsh/zle/next-file-nocomp,20090323191053;replace current argument by the next file as if you were
+zen;zsh/zle/previous-file-nocomp,20090323191053;replace current argument by the previous file as if you were

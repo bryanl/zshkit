@@ -1,0 +1,5 @@
+zsh/scripts/http/cat;zsh/scripts/http/get,zsh/scripts/http/urlencode
+zsh/scripts/zen;http/cat
+zsh/scripts/zgoogleit;zsh/scripts/http/urlencode
+zsh/scripts/zpaste;zsh/scripts/http/post,zsh/scripts/http/urlencode
+zsh/scripts/zurl;zsh/scripts/http/get,zsh/scripts/http/urlencode

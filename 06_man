@@ -6,4 +6,3 @@ if [[ $OSTYPE[1,6] == "darwin" ]]; then
 	}
 fi
 
-export MANPATH=/opt/local/share/man:$MANPATH

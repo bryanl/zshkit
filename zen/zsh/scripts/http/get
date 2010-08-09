@@ -1,0 +1,26 @@
+# Description: Perform a http GET 
+# Depends:
+# Author: Bapt
+# Version: 20090421184011
+# Usage: get host port path
+# vim: set syntax=zsh:
+#
+autoload -U tcp_open
+unsetopt warncreateglobal
+local IFS TCP_SILENT HTTPHOST PORT REQUEST
+zparseopts h:=HTTPHOST p:=PORT r:=REQUEST
+if [[ -z "$HTTPHOST[2]" || -z "$PORT[2]" || -z "$REQUEST[2]" ]] {
+    print "usage: http/get -h host -p port -r request"
+    return 1
+}
+TCP_SILENT=1
+IFS=' '
+tcp_open -q $HTTPHOST[2] $PORT[2] $HTTPHOST[2] || return 2
+tcp_send -s $HTTPHOST[2] -- "GET $REQUEST[2] HTTP/1.1"
+tcp_send -s $HTTPHOST[2] -- "Host: $HTTPHOST[2]"
+tcp_send -s $HTTPHOST[2] -- "Accept-Charset: utf-8"
+tcp_send -s $HTTPHOST[2] -- ""
+IFS=''
+tcp_read -b -d -s $HTTPHOST[2]
+IFS=' '
+tcp_close -q $HTTPHOST[2]

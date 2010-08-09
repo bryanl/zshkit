@@ -1,0 +1,20 @@
+# Version: 20090323191053
+# Description: function to transform a string respecting the RFC 1738
+# Author: Bapt
+# vim: set syntax=zsh
+#
+# http_urlencode $string
+# return http_url_encoded variable
+#
+# Be carefull if an array is passed, the array is converted in a string var 
+# so it losts the \n
+#
+setopt warn_create_global
+local input
+typeset -g http_url_encoded
+if [[ $# -eq 0 ]] {
+    print "usage: http/urlencode string_to_be_urlencoded"
+    return 1
+}
+input=(${(s::)1})
+http_url_encoded=${(j::)input/(#b)([^A-Za-z0-9_.!~*\'\(\)-])/%${(l:2::0:)$(([##16]#match))}}
