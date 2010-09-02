@@ -97,6 +97,7 @@ prompt_wunjo_setup() {
 	pc[scm_status_dirty]='Red'
 	pc[scm_status_staged]='Green'
 	pc[#]='Yellow'
+  pc[rvm]='Red'
 	for cn in ${(k)pc}; do
 		pc[${cn}]=$(colorword $pc[$cn])
 	done
@@ -112,7 +113,7 @@ prompt_wunjo_setup() {
 	p_line="$pc[line]%y$pc[reset]"
 
 	PROMPT=
-        PROMPT+="\$(prompt_rvm) "
+  PROMPT+="$pc[rvm]\$(prompt_rvm)$pc[reset] "
 	PROMPT+="$pc[path]%(2~.%~.%/)$pc[reset]"
 	PROMPT+="\$(prompt_wunjo_scm_status)"
 	PROMPT+="%(?.. $pc[rc]exited %1v$pc[reset])"
