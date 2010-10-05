@@ -130,7 +130,7 @@ prompt_wunjo_setup() {
 
 prompt_rvm() {
     RVM=`/Users/bryan/.rvm/bin/rvm-prompt`
-    echo -n "`/Users/bryan/.rvm/bin/rvm-prompt i v g`"
+    echo -n "`/Users/bryan/.rvm/bin/rvm-prompt u g`"
 }
 
 prompt_wunjo_precmd() {
@@ -254,8 +254,6 @@ prompt_wunjo_scm_branch() {
 	local -A pc
 	pc=(${(kv)wunjo_prompt_colors})
 
-	echo -n "$pc[punc]:$pc[scm_branch]$(zgit_head)"
-
 	if zgit_inworktree; then
 		if ! zgit_isindexclean; then
 			echo -n "$pc[scm_status_staged]+"
@@ -263,7 +261,7 @@ prompt_wunjo_scm_branch() {
 
 		local -a dirty
 		if ! zgit_isworktreeclean; then
-			dirty+=' λ'
+			dirty+='Δ'
 		fi
 
 		if zgit_hasunmerged; then
