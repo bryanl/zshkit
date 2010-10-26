@@ -11,3 +11,4 @@ alias xmlput="curl -X PUT -H 'Accept: application/xml'"
 alias xmldelete="curl -X DELETE -H 'Accept: application/xml'"
 alias gup="git fetch origin master && git rebase origin/master"
 alias em='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
+alias gsdev='cd ~/Development/goldstar/goldstar'
