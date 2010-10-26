@@ -130,7 +130,7 @@ prompt_wunjo_setup() {
 
 prompt_rvm() {
     RVM=`/Users/bryan/.rvm/bin/rvm-prompt`
-    echo -n "`/Users/bryan/.rvm/bin/rvm-prompt i v g`"
+    echo -n "`/Users/bryan/.rvm/bin/rvm-prompt u g`"
 }
 
 prompt_wunjo_precmd() {
