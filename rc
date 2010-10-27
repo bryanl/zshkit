@@ -1,8 +1,8 @@
 zstyle ':completion:*' completer _expand _complete
+zstyle ':completion:*' cache-path ~/.zsh/cache
 
 autoload -Uz compinit
 compinit
-
 
 bash_source() {
   alias shopt=':'
